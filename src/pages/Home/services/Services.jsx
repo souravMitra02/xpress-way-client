@@ -1,5 +1,5 @@
 import React from 'react';
-import ServiceCard from '../components/ServiceCard';
+import ServiceCard from '../services/ServiceCard';
 import {
   FaShippingFast,
   FaMapMarkedAlt,
@@ -9,7 +9,7 @@ import {
   FaUndoAlt
 } from 'react-icons/fa';
 
-const services = [
+const servicesData = [
   {
     icon: FaShippingFast,
     title: 'Express & Standard Delivery',
@@ -50,20 +50,18 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-12 px-4 max-w-7xl mx-auto">
+    <section className="py-12 px-12 max-w-7xl mx-auto bg-[#03373D] rounded-2xl">
       <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-gray-800">Our Services</h2>
-        <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
+        <h2 className="text-3xl font-bold text-white">Our Services</h2>
+        <p className="text-white mt-2 max-w-2xl mx-auto">
           Enjoy fast, reliable parcel delivery with real-time tracking and zero hassle. From personal packages to business shipments — we deliver on time, every time.
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((service, idx) => (
+        {servicesData.map((service, idx) => (
           <ServiceCard
             key={idx}
-            icon={service.icon}
-            title={service.title}
-            description={service.description}
+            service={service}
           />
         ))}
       </div>
